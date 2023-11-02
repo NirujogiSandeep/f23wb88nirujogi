@@ -2,4 +2,18 @@ extends layout
 
 block content
   h1= title
-  
+  - let result = [{ name: "Arabian Sea", Sizeinkm: 2400, location: "SouthAsia"},{ name: "", age: 30, species: "African"},{ name: "Marie", age: 20, species: "America"}]   
+   div.container-fluid 
+    div.row
+     each elephant,index in result
+      div.col-sm-2(onclick=`buy(${index})`) #{elephant.name}
+      div.col-sm-2(onclick=`buy(${index})`) #{elephant.age}
+      div.col-sm-2(onclick=`buy(${index})`) #{elephant.species}
+      br
+      hr
+
+  script. 
+       function buy(index)
+       {
+        alert(`you purchased Item: ${index+1}`)
+       }
